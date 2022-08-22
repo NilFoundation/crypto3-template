@@ -1,22 +1,42 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
-project(bls-test)
 
-add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/pubkey")
 
+cm_project(bls-test WORKSPACE_NAME ${CMAKE_WORKSPACE_NAME} LANGUAGES ASM C CXX)
 #cmake_policy(SET CMP0042 NEW)
 #cmake_policy(SET CMP0028 NEW)
 #cmake_policy(SET CMP0057 NEW)
 
+cm_find_package(CM)
+include(CMDeploy)
+include(CMSetupVersion)
 
-# list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake"
-#        "${CMAKE_CURRENT_LIST_DIR}/cmake/packages"
-#        "${CMAKE_CURRENT_LIST_DIR}/cmake/modules/share/modules/cmake")
+
+
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake"
+        "${CMAKE_CURRENT_LIST_DIR}/cmake/packages"
+        "${CMAKE_CURRENT_LIST_DIR}/cmake/modules/share/modules/cmake")
+
+cm_workspace(bls-test)
 
 #include(CMConfig)
 #include(CMDeploy)
 #include(CMSetupVersion)
 
-#cm_workspace(mina)
+add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/libs")
+
+add_executable(${CURRENT_PROJECT_NAME} main.cpp)
+
+
+target_link_libraries(${CURRENT_PROJECT_NAME}
+        crypto3::algebra
+        crypto3::block
+        crypto3::hash
+        crypto3::multiprecision
+        crypto3::pubkey
+        crypto3::random
+)
+
+
 
 
 

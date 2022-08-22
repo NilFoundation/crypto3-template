@@ -1,0 +1,18 @@
+[submodule "libs/pubkey"]
+	path = libs/pubkey
+	url = git@github.com:NilFoundation/crypto3-pubkey.git
+[submodule "libs/algebra"]
+	path = libs/algebra
+	url = git@github.com:NilFoundation/crypto3-algebra.git
+[submodule "libs/hash"]
+	path = libs/hash
+	url = git@github.com:NilFoundation/crypto3-hash.git
+[submodule "libs/random"]
+	path = libs/random
+	url = git@github.com:NilFoundation/crypto3-random.git
+[submodule "libs/block"]
+	path = libs/block
+	url = git@github.com:NilFoundation/crypto3-block.git
+[submodule "libs/multiprecision"]
+	path = libs/multiprecision
+	url = git@github.com:NilFoundation/crypto3-multiprecision.git

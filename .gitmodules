@@ -16,3 +16,6 @@
 [submodule "libs/multiprecision"]
 	path = libs/multiprecision
 	url = git@github.com:NilFoundation/crypto3-multiprecision.git
+[submodule "cmake/modules"]
+	path = cmake/modules
+	url = git@github.com:BoostCMake/cmake_modules.git

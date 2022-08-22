@@ -7,7 +7,7 @@ cmake_policy(SET CMP0057 NEW)
 ## Change path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake"
         "${CMAKE_CURRENT_LIST_DIR}/cmake/packages"
-        "${CMAKE_CURRENT_LIST_DIR}/cmake/modules/cmake/modules/share/modules/cmake")
+        "${CMAKE_CURRENT_LIST_DIR}/cmake/modules/share/modules/cmake")
 
 include(CMConfig)
 include(CMDeploy)

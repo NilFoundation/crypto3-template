@@ -27,7 +27,7 @@ cm_workspace(bls-test)
 #option(BUILD_SHARED_LIBS "Build shared library" TRUE)
 
 add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/libs")
-add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/src")
+add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/bin")
 
 #add_custom_target(bls-sig
 #        COMMAND truffle compile

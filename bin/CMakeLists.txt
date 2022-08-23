@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
+message("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+
 cm_find_package(CM)
 include(CMDeploy)
 include(CMSetupVersion)
@@ -32,8 +34,9 @@ cm_setup_version(VERSION 0.1.0)
 set(${CURRENT_PROJECT_NAME}_HEADERS)
 
 # list cpp files excluding platform-dependent files
-list(APPEND ${CURRENT_PROJECT_NAME}_SOURCES
-        main.cpp)
+list(APPEND ${CURRENT_PROJECT_NAME}_SOURCES src/main.cpp)
+
+message("THE CURRENT PRJ IS " ${CURRENT_PROJECT_NAME})
 
 add_executable(${CURRENT_PROJECT_NAME}
         ${${CURRENT_PROJECT_NAME}_HEADERS}
@@ -46,7 +49,6 @@ set_target_properties(${CURRENT_PROJECT_NAME} PROPERTIES
         CXX_STANDARD_REQUIRED TRUE)
 
 target_link_libraries(${CURRENT_PROJECT_NAME}
-
         crypto3::pubkey
         crypto3::algebra
         crypto3::hash

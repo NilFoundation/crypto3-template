@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 
-message("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-
 cm_find_package(CM)
 include(CMDeploy)
 include(CMSetupVersion)
@@ -55,6 +53,16 @@ target_link_libraries(${CURRENT_PROJECT_NAME}
         crypto3::random
         crypto3::multiprecision
         crypto3::block
+        crypto3::zk
+        crypto3::mac
+        crypto3::math
+        crypto3::modes
+        crypto3::containers
+        crypto3::stream
+        crypto3::codec
+
+        marshalling::crypto3_algebra
+
         ${Boost_LIBRARIES})
 
 target_include_directories(${CURRENT_PROJECT_NAME} PUBLIC

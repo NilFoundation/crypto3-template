@@ -60,9 +60,8 @@ target_link_libraries(${CURRENT_PROJECT_NAME}
         crypto3::containers
         crypto3::stream
         crypto3::codec
-
+        marshalling::core
         marshalling::crypto3_algebra
-
         ${Boost_LIBRARIES})
 
 target_include_directories(${CURRENT_PROJECT_NAME} PUBLIC

@@ -28,6 +28,8 @@ cm_workspace(bls-test)
 
 add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/libs")
 add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/bin")
+add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling")
+
 
 #add_custom_target(bls-sig
 #        COMMAND truffle compile

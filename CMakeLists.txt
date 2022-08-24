@@ -1,20 +1,24 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
-cmake_policy(SET CMP0042 NEW)
-cmake_policy(SET CMP0028 NEW)
-cmake_policy(SET CMP0057 NEW)
-
-## Change path
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake"
-        "${CMAKE_CURRENT_LIST_DIR}/cmake/packages"
-        "${CMAKE_CURRENT_LIST_DIR}/cmake/modules/share/modules/cmake")
-
-include(CMConfig)
-
-
 
 project(bls-test)
 
-add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/libs")
-add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/bin")
-add_subdirectories("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling")
+
+
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/algebra")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/block")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/codec")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/container")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/hash")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/mac")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/math")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/modes")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/multiprecision")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/pubkey")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/random")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/stream")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/zk")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling/algebra")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling/core")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling/multiprecision")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/bin/blssig")

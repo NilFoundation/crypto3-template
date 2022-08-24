@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 
-MESSAGE("Project name is " ${CMAKE_PROJECT_NAME})
-
 # get header files; only needed by CMake generators,
 # expr.g., for creating proper Xcode projects
 set(${CMAKE_PROJECT_NAME}_HEADERS)

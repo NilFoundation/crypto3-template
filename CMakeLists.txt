@@ -1,9 +1,6 @@
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
-
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 project(bls-test)
-
-
 
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/algebra")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/block")

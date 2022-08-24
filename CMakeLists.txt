@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-project(bls-test)
+project(bls)
 
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/algebra")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/block")
@@ -18,4 +18,4 @@ add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/zk")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling/algebra")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling/core")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/libs/marshalling/multiprecision")
-add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/bin/blssig")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/src/bls")

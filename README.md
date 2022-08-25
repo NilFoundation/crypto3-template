@@ -35,7 +35,7 @@ cmake .. && make
 
 - Run executable
 ``` 
-./src/bls/bls
+./src/bls/crypto3-scaffold
 ```
 
 # Common issues

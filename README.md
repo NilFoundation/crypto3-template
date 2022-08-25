@@ -40,6 +40,8 @@ cmake .. && make
 ```
 
 # Common issues
+
+## Compilation Errors
 If you have more than one compiler installed i.e g++ & clang++. The make system might pick up the former. You can explicitly force usage of 
 clang++ by finding the path and passing it in the variable below.
 
@@ -47,3 +49,10 @@ clang++ by finding the path and passing it in the variable below.
 `which clang++`  
 cmake .. -DCMAKE_CXX_COMPILER=<path to clang++ from above>
 ```
+
+## Submodule management
+Git maintains a few places where submodule details are cached. 
+- .gitmodules
+- .git/config
+- .git/modules/*
+Sometimes updates do not come through. It is advisable to check these locations for remains or try a new checkout.

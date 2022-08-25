@@ -1,11 +1,12 @@
-# Crypto3 Pubkey Scaffolding
+# Crypto3 Scaffolding
 
-This repository scaffolds the required dependencies for [pubkey](https://github.com/NilFoundation/crypto3-pubkey/) package from 
-=nil;Foundations [crypto3](https://github.com/NilFoundation/crypto3) library and presents an example of BLS signing. 
+This repository scaffolds the required dependencies =nil;Foundations [crypto3](https://github.com/NilFoundation/crypto3) library and presents
+an example of the [pubkey](https://github.com/NilFoundation/crypto3-pubkey/) module to sign & verify BLS signature.  
+
 
 # Dependencies
 
-- [Boost](https://www.boost.org/) >= 1.7.4
+- [Boost](https://www.boost.org/) >= 1.74.0
 - [cmake](https://cmake.org/) >= 3.5
 - [clang](https://clang.llvm.org/) >= 14.0.6
 

@@ -1,6 +1,6 @@
 # Crypto3 Scaffolding
 
-This repository scaffolds the required dependencies =nil;Foundations [crypto3](https://github.com/NilFoundation/crypto3) library and presents
+This repository scaffolds the required dependencies for =nil;Foundation's [crypto3](https://github.com/NilFoundation/crypto3) library and presents
 an example of the [pubkey](https://github.com/NilFoundation/crypto3-pubkey/) module to sign & verify BLS signature.  
 
 
@@ -20,7 +20,7 @@ On *nix systems, the following dependencies need to be present & can be installe
 - Clone the repo 
  ```
 git clone https://github.com/hgedia/crypto3-pubkey-scaffold.git
-cd crypto3-pubkey-scaffold
+cd crypto3-scaffold
 ```
 
 - Clone all submodules recursively

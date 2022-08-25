@@ -5,9 +5,9 @@ This repository scaffolds the required dependencies for [pubkey](https://github.
 
 # Dependencies
 
-[Boost](https://www.boost.org/) >= 1.7.4
-[cmake](https://cmake.org/) >= 3.5
-[clang](https://clang.llvm.org/) >= 14.0.6
+- [Boost](https://www.boost.org/) >= 1.7.4
+- [cmake](https://cmake.org/) >= 3.5
+- [clang](https://clang.llvm.org/) >= 14.0.6
 
 On *nix systems, the following dependencies need to be present & can be installed using the following command
 
@@ -39,14 +39,10 @@ cmake .. && make
 ```
 
 # Common issues
-If you have more than one compiler installed i.e g++ & clang++. The make system might pick up the former. You can explicitly force usage of clang
-via the following flag.
-
-Find clang++ location 
-```
-`which clang++`
-```
+If you have more than one compiler installed i.e g++ & clang++. The make system might pick up the former. You can explicitly force usage of 
+clang++ by finding the path and passing it in the variable below.
 
 ```
-cmake .. -DCMAKE_CXX_COMPILER=<path to clang++>
+`which clang++`  
+cmake .. -DCMAKE_CXX_COMPILER=<path to clang++ from above>
 ```

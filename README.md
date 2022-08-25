@@ -51,8 +51,8 @@ cmake .. -DCMAKE_CXX_COMPILER=<path to clang++ from above>
 ```
 
 ## Submodule management
-Git maintains a few places where submodule details are cached. 
+Git maintains a few places where submodule details are cached. Sometimes updates do not come through. ex: Deletion , updating
+a url of a previously checked out submodule.It is advisable to check these locations for remains or try a new checkout.
 - .gitmodules
 - .git/config
 - .git/modules/*
-Sometimes updates do not come through. It is advisable to check these locations for remains or try a new checkout.

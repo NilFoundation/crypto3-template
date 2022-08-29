@@ -23,7 +23,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         crypto3::blueprint
         crypto3::codec
         crypto3::containers
-#        crypto3::ffi
         crypto3::hash
         crypto3::kdf
         crypto3::mac

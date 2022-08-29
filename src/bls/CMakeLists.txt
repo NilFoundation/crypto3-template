@@ -36,7 +36,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         crypto3::multiprecision
         crypto3::passhash
         crypto3::pbkdf
-#        crypto3::pkmodes
+        crypto3::threshold
         crypto3::pkpad
         crypto3::pubkey
         crypto3::random

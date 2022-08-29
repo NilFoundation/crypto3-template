@@ -18,21 +18,31 @@ set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES
         CXX_STANDARD_REQUIRED TRUE)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
-        crypto3::pubkey
         crypto3::algebra
-        crypto3::hash
-        crypto3::random
-        crypto3::multiprecision
         crypto3::block
-        crypto3::zk
-        crypto3::mac
-        crypto3::math
-        crypto3::modes
-        crypto3::containers
-        crypto3::stream
+        crypto3::blueprint
         crypto3::codec
+        crypto3::containers
+#        crypto3::ffi
+        crypto3::hash
+#        crypto3::kdf
+        crypto3::mac
         marshalling::core
         marshalling::crypto3_algebra
+        marshalling::crypto3_multiprecision
+        marshalling::crypto3_zk
+        crypto3::math
+        crypto3::modes
+        crypto3::multiprecision
+#        crypto3::passhash
+#        crypto3::pbkdf
+#        crypto3::pkmodes
+        crypto3::pkpad
+        crypto3::pubkey
+        crypto3::random
+        crypto3::stream
+#        crypto3::vdf
+        crypto3::zk
         boost_random
         )
 

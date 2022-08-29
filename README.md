@@ -1,11 +1,12 @@
-# Crypto3 Pubkey Scaffolding
+# Crypto3 Scaffolding
 
-This repository scaffolds the required dependencies for [pubkey](https://github.com/NilFoundation/crypto3-pubkey/) package from 
-=nil;Foundations [crypto3](https://github.com/NilFoundation/crypto3) library and presents an example of BLS signing. 
+This repository scaffolds the required dependencies for =nil;Foundation's [crypto3](https://github.com/NilFoundation/crypto3) library and presents
+an example of the [pubkey](https://github.com/NilFoundation/crypto3-pubkey/) module to sign & verify BLS signature.  
+
 
 # Dependencies
 
-- [Boost](https://www.boost.org/) >= 1.7.4
+- [Boost](https://www.boost.org/) >= 1.74.0
 - [cmake](https://cmake.org/) >= 3.5
 - [clang](https://clang.llvm.org/) >= 14.0.6
 
@@ -18,8 +19,8 @@ On *nix systems, the following dependencies need to be present & can be installe
 # Installation 
 - Clone the repo 
  ```
-git clone https://github.com/hgedia/crypto3-pubkey-scaffold.git
-cd crypto3-pubkey-scaffold
+git clone https://github.com/hgedia/crypto3-scaffold.git
+cd crypto3-scaffold
 ```
 
 - Clone all submodules recursively
@@ -39,6 +40,8 @@ cmake .. && make
 ```
 
 # Common issues
+
+## Compilation Errors
 If you have more than one compiler installed i.e g++ & clang++. The make system might pick up the former. You can explicitly force usage of 
 clang++ by finding the path and passing it in the variable below.
 
@@ -46,3 +49,10 @@ clang++ by finding the path and passing it in the variable below.
 `which clang++`  
 cmake .. -DCMAKE_CXX_COMPILER=<path to clang++ from above>
 ```
+
+## Submodule management
+Git maintains a few places where submodule details are cached. Sometimes updates do not come through. ex: Deletion , updating
+a url of a previously checked out submodule.It is advisable to check these locations for remains or try a new checkout.
+- .gitmodules
+- .git/config
+- .git/modules/*

@@ -1,19 +1,28 @@
-#include <nil/crypto3/pubkey/modes/algorithm/sign.hpp>
-#include <nil/crypto3/pubkey/modes/algorithm/verify.hpp>
-#include <nil/crypto3/pubkey/modes/algorithm/part_verify.hpp>
-#include <nil/crypto3/pubkey/modes/algorithm/aggregate.hpp>
-#include <nil/crypto3/pubkey/algorithm/deal_shares.hpp>
-#include <nil/crypto3/pubkey/modes/algorithm/create_key.hpp>
-
-#include <nil/crypto3/pubkey/modes/threshold.hpp>
-
-#include <nil/crypto3/pubkey/bls.hpp>
-
-#include <nil/crypto3/pubkey/secret_sharing.hpp>
+#include <iostream>
+#include <string>
+#include <cassert>
+#include <unordered_map>
 
 #include <boost/test/unit_test.hpp>
 #include <boost/test/data/test_case.hpp>
 #include <boost/test/data/monomorphic.hpp>
+
+#include <nil/crypto3/pubkey/bls.hpp>
+#include <nil/crypto3/pubkey/modes/threshold_bls.hpp>
+
+#include <nil/crypto3/pubkey/secret_sharing/pedersen.hpp>
+
+#include <nil/crypto3/pubkey/modes/threshold.hpp>
+
+#include <nil/crypto3/pubkey/algorithm/sign.hpp>
+#include <nil/crypto3/pubkey/modes/algorithm/sign.hpp>
+#include <nil/crypto3/pubkey/algorithm/verify.hpp>
+#include <nil/crypto3/pubkey/modes/algorithm/part_verify.hpp>
+#include <nil/crypto3/pubkey/algorithm/aggregate.hpp>
+#include <nil/crypto3/pubkey/algorithm/deal_shares.hpp>
+
+#include <nil/crypto3/pubkey/modes/algorithm/create_key.hpp>
+#include <nil/crypto3/pubkey/modes/algorithm/part_verify.hpp>
 
 
 using namespace nil::crypto3::algebra;

@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.5)
 set(${CMAKE_PROJECT_NAME}_HEADERS)
 
 # list cpp files excluding platform-dependent files
-list(APPEND ${CMAKE_PROJECT_NAME}_SOURCES src/main.cpp)
+list(APPEND ${CMAKE_PROJECT_NAME}_SOURCES src/threshold.cpp)
 
 find_package(Boost COMPONENTS random)
 

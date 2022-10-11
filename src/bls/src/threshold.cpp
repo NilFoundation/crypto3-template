@@ -54,7 +54,6 @@ int main() {
 
     const std::string msg_str = "hello foo";
     const std::vector<std::uint8_t> msg(std::cbegin(msg_str), std::cend(msg_str));
-    const std::vector<std::uint8_t> msg_wrong(std::cbegin(msg_str), std::cend(msg_str) - 1);
 
     std::size_t n = 20;
     std::size_t t = 10;
@@ -79,8 +78,6 @@ int main() {
                 nil::crypto3::sign<scheme_type, decltype(msg), signing_processing_mode_type>(msg, weights, sk));
         BOOST_CHECK(static_cast<bool>(
                             nil::crypto3::part_verify<mode_type>(msg.begin(), msg.end(), part_signatures.back(), weights, sk)));
-        BOOST_CHECK(
-                !static_cast<bool>(nil::crypto3::part_verify<mode_type>(msg_wrong, part_signatures.back(), weights, sk)));
     }
 
     //===========================================================================
@@ -93,14 +90,7 @@ int main() {
     BOOST_CHECK(static_cast<bool>(
                         nil::crypto3::verify<scheme_type, decltype(msg), verification_processing_mode_type>(msg, sig, PK)));
 
-    //===========================================================================
-    // not confirmed group of participants cannot aggregate partial signatures
 
-    typename pubkey_type::signature_type wrong_sig =
-            nil::crypto3::aggregate<scheme_type, decltype(std::cbegin(part_signatures)), aggregation_processing_mode_type>(
-                    std::cbegin(part_signatures), std::cend(part_signatures) - 1);
-    BOOST_CHECK(!static_cast<bool>(
-            nil::crypto3::verify<scheme_type, decltype(msg), verification_processing_mode_type>(msg, wrong_sig, PK)));
 
     //===========================================================================
     // threshold number of participants sign messages and verify its signatures
@@ -134,44 +124,6 @@ int main() {
                                                       std::cend(part_signatures_t));
     BOOST_CHECK(static_cast<bool>(
                         nil::crypto3::verify<scheme_type, decltype(msg), verification_processing_mode_type>(msg, sig_t, PK)));
-
-    //===========================================================================
-    // less than threshold number of participants sign messages and verify its signatures
-
-    std::vector<typename privkey_type::part_signature_type> part_signatures_less_t;
-    typename privkey_type::weights_type confirmed_weights_less_t;
-    std::vector<privkey_type> confirmed_keys_less_t;
-    weighted_keys_it = privkeys.begin();
-    auto weight_less_t = 0;
-    while (true) {
-        weight_less_t += weighted_keys_it->get_weight();
-        if (weight_less_t >= t) {
-            break;
-        }
-        confirmed_keys_less_t.emplace_back(*weighted_keys_it);
-        confirmed_weights_less_t.emplace(weighted_keys_it->get_index(), weights.at(weighted_keys_it->get_index()));
-        ++weighted_keys_it;
-    }
-
-    for (auto &sk : confirmed_keys_less_t) {
-        part_signatures_less_t.emplace_back(
-                nil::crypto3::sign<scheme_type, decltype(msg), signing_processing_mode_type>(msg, confirmed_weights_less_t,
-                                                                                             sk));
-        BOOST_CHECK(static_cast<bool>(nil::crypto3::part_verify<mode_type>(
-                msg.begin(), msg.end(), part_signatures_less_t.back(), confirmed_weights_less_t, sk)));
-    }
-
-    //===========================================================================
-    // less than threshold number of participants cannot aggregate partial signatures
-
-    // TODO: add simplified call interface for aggregate and verify
-    typename pubkey_type::signature_type sig_less_t =
-            nil::crypto3::aggregate<scheme_type, decltype(std::cbegin(part_signatures_less_t)),
-                    aggregation_processing_mode_type>(std::cbegin(part_signatures_less_t),
-                                                      std::cend(part_signatures_less_t));
-    BOOST_CHECK(!static_cast<bool>(
-            nil::crypto3::verify<scheme_type, decltype(msg), verification_processing_mode_type>(msg, sig_less_t, PK)));
-
 
     return 0;
 }

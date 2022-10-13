@@ -31,9 +31,6 @@ using namespace nil::crypto3::pubkey;
 
 
 using curve_type = nil::crypto3::algebra::curves::bls12_381;
-//using base_scheme_type = bls<bls_default_public_params<>, bls_mps_ro_version, bls_basic_scheme, curve_type>;
-
-
 using base_scheme_type = bls<bls_default_public_params<>>;
 
 using mode_type = modes::threshold<base_scheme_type, weighted_shamir_sss>;
@@ -43,17 +40,11 @@ using pubkey_type = public_key<scheme_type>;
 
 
 using sss_public_key_group_type = typename pubkey_type::sss_public_key_group_type;
-
 using shares_dealing_processing_mode = typename nil::crypto3::pubkey::modes::isomorphic<sss_public_key_group_type>::template bind<
         nil::crypto3::pubkey::shares_dealing_policy<sss_public_key_group_type>>::type;
-
-
 using signing_processing_mode_type = typename mode_type::template bind<typename mode_type::signing_policy>::type;
-
 using verification_processing_mode_type =
         typename mode_type::template bind<typename mode_type::verification_policy>::type;
-
-
 using aggregation_processing_mode_type =
         typename mode_type::template bind<typename mode_type::aggregation_policy>::type;
 

@@ -15,9 +15,6 @@ add_executable(${C3_TARGET}
                ${${CMAKE_PROJECT_NAME}_HEADERS}
                ${${CMAKE_PROJECT_NAME}_SOURCES})
 
-#add_executable("BLS_THRESH"
-#        ${${CMAKE_PROJECT_NAME}_HEADERS}
-#        ${${CMAKE_PROJECT_NAME}_SOURCES} src/threshold.cpp)
 
 set_target_properties(${C3_TARGET} PROPERTIES
                       LINKER_LANGUAGE CXX

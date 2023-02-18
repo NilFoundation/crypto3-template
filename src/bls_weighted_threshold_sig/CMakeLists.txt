@@ -9,7 +9,7 @@ set(C3_TARGET "bls_weighted_threshold_sig")
 set(${CMAKE_PROJECT_NAME}_HEADERS)
 
 # list cpp files excluding platform-dependent files
-list(APPEND ${CMAKE_PROJECT_NAME}_SOURCES src/threshold.cpp)
+list(APPEND ${CMAKE_PROJECT_NAME}_SOURCES src/main.cpp)
 
 find_package(Boost COMPONENTS random)
 
@@ -44,6 +44,7 @@ target_link_libraries(${C3_TARGET}
                       crypto3::threshold
                       crypto3::pkpad
                       crypto3::pubkey
+                      crypto3::threshold
                       crypto3::random
                       crypto3::stream
                       crypto3::vdf
@@ -51,6 +52,6 @@ target_link_libraries(${C3_TARGET}
 
                       ${Boost_LIBRARIES})
 
-#target_include_directories(${C3_TARGET} PUBLIC
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+target_include_directories(${C3_TARGET} PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
